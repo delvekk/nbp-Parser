@@ -19,4 +19,44 @@ public class Position {
     private Double purchasePrice;
     @XmlElement(name = "kurs_sprzedazy")
     private Double sellingRate;
+
+    public String getCurrencyName() {
+        return currencyName;
+    }
+
+    public void setCurrencyName(String currencyName) {
+        this.currencyName = currencyName;
+    }
+
+    public Integer getConversionFactor() {
+        return conversionFactor;
+    }
+
+    public void setConversionFactor(Integer conversionFactor) {
+        this.conversionFactor = conversionFactor;
+    }
+
+    public String getCurrencyCode() {
+        return currencyCode;
+    }
+
+    public void setCurrencyCode(String currencyCode) {
+        this.currencyCode = currencyCode;
+    }
+
+    public Double getPurchasePrice() {
+        return purchasePrice;
+    }
+
+    public void setPurchasePrice(Double purchasePrice) {
+        this.purchasePrice = purchasePrice;
+    }
+
+    public Double getSellingRate() {
+        return sellingRate;
+    }
+
+    public void setSellingRate(Double sellingRate) {
+        this.sellingRate = sellingRate;
+    }
 }

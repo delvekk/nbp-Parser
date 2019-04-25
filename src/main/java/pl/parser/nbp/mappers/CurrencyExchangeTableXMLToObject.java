@@ -9,7 +9,7 @@ import java.io.InputStream;
 
 public class CurrencyExchangeTableXMLToObject {
 
-    public CurrencyExchangeTable XmlToOjbect(InputStream xmlStream) throws JAXBException {
+    public CurrencyExchangeTable XmlToObject(InputStream xmlStream) throws JAXBException {
         JAXBContext jaxbContext = JAXBContext.newInstance(CurrencyExchangeTable.class);
         Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
         return (CurrencyExchangeTable) jaxbUnmarshaller.unmarshal(xmlStream);
