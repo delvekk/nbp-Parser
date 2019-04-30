@@ -23,9 +23,14 @@ public class CurrencyExchangeTableXMLToObjectTest {
     }
 
     @Test
-    public void xmlToOjbect() throws Exception {
+    public void testXmlToObject() throws Exception {
+            // given
             inputStream = new FileInputStream(new File("src/test/resources/currencyTable.xml"));
+
+            // when
             CurrencyExchangeTable exchangeTable = xmlToObject.XmlToObject(inputStream);
+
+            // then
             assertNotNull(exchangeTable);
             assertEquals(Date.valueOf("2007-04-13"), exchangeTable.getPublicationDate());
             assertEquals(14, exchangeTable.getPositions().size());

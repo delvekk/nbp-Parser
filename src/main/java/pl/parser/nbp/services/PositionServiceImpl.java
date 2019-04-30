@@ -9,14 +9,7 @@ import java.util.stream.Collectors;
 public class PositionServiceImpl implements PositionService {
 
     @Override
-    public List<Position> getPositionFromTableForCurrencyCode(List<CurrencyExchangeTable> currencyExchangeTableList, String currencyCode) {
-//        List<Position> positions = new ArrayList<>();
-//        currencyExchangeTableList.forEach(exchangeTable -> {
-//            List<Position> tablePositions = exchangeTable.getPositions();
-//            Optional<Position> optionalPosition = tablePositions.stream().filter(position -> position.getCurrencyCode().equals(currencyCode)).findFirst();
-//            optionalPosition.ifPresent(positions::add);
-//        });
-
+    public List<Position> getPositionFromTableForCurrencyCode(List<CurrencyExchangeTable> currencyExchangeTableList, String currencyCode) throws NoSuchElementException {
         List<Position> positions = currencyExchangeTableList.stream().map(exchangeTable -> {
             List<Position> tablePositions = exchangeTable.getPositions();
             Optional<Position> optionalPosition = tablePositions.stream().filter(position -> position.getCurrencyCode().equals(currencyCode)).findFirst();

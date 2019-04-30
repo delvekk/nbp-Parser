@@ -7,15 +7,15 @@ import java.util.stream.Collectors;
 public class DatesHandler {
 
     public List<LocalDate> getAllDatesInRange(LocalDate startDate, LocalDate endDate) {
-        return startDate.datesUntil(endDate).collect(Collectors.toList());
+        return startDate.datesUntil(endDate.plusDays(1)).collect(Collectors.toList());
     }
 
     public List<String> createDateStrings(List<LocalDate> localDates) {
         return localDates.stream().map(localDate -> {
             StringBuilder stringBuilder = new StringBuilder();
             int year = localDate.getYear();
-            int month = localDate.getMonth().getValue();
-            int day = localDate.getDayOfMonth();
+            String month = String.format("%02d", localDate.getMonth().getValue());
+            String day = String.format("%02d", localDate.getDayOfMonth());
             stringBuilder.append(String.valueOf(year).substring(2));
             stringBuilder.append(month).append(day);
             return stringBuilder.toString();
