@@ -1,6 +1,5 @@
 package pl.parser.nbp.utilities;
 
-import org.junit.Before;
 import org.junit.Test;
 import pl.parser.nbp.domain.Position;
 
@@ -9,10 +8,6 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 public class ConverterTest {
-
-    @Before
-    public void setUp() {
-    }
 
     @Test
     public void testConvertPurchaseStringToDouble() {
